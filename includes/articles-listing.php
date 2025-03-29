@@ -1,8 +1,4 @@
 <?php
-declare(strict_types=1);
-require 'includes/database-connection.php';
-require 'includes/functions.php';
-
 $sql = "SELECT
       A.id,   A.title, A.summary,
       A.category_id, A.member_id,

@@ -1,4 +1,6 @@
-<?php include 'includes/header.php' ?>
+<?php
+include 'includes/header.php'
+    ?>
 
 <div class="container">
     <?php include 'includes/articles-listing.php' ?>
