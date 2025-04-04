@@ -25,7 +25,7 @@ session_start(); // Start the session
       </a>
       <a href="index.php">Home</a>
       <a href="#about">About</a>
-      <a href="#services">Categories</a>
+      <a href="category">Categories</a>
       <a href="#contact">Contact</a>
       <?php if (isset($_SESSION['email'])): ?>
         <a style="float:right" href="logout.php">
