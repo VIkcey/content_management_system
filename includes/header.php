@@ -11,42 +11,37 @@ session_start(); // Start the session
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="./css/style.css">
-  <title>CONTENT MANAGEMENT SYSTEM</title>
+  <link rel="stylesheet" href="./css/auth.css">
+
+  <title>WanderLog | Explore, Dream, Discover</title>
 </head>
 
 <body>
-  <header>
-    <nav style="position: relative">
-      <a href="index.php">
-        <img style="position: absolute;
-  top: 0;
-  left: 0; width:60px; height: 60px;" src="./img/cms-logo.png" alt="Logo">
+  <header class="site-header sticky-nav">
+    <div class="nav-container">
+      <a href="index" class="logo">
+        <img src="img/logo.png" alt="WanderLog logo" height="90" width="auto">
       </a>
-      <a href="index.php">Home</a>
-      <a href="#about">About</a>
-      <a href="category">Categories</a>
-      <a href="#contact">Contact</a>
-      <?php if (isset($_SESSION['email'])): ?>
-        <a style="float:right" href="logout.php">
-          <li>Logout</li>
-        </a>
-        <a style="float:right" href="#">
-          <li>Hello, <?php echo htmlspecialchars($_SESSION['username']); ?>!</li>
-        </a>
-      <?php else: ?>
-        <a style="float:right" href="login.php">
-          <li>
+      <nav class="nav-links">
+        <a href="index">Home</a>
+        <a href="categories">Destinations</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <?php if (isset($_SESSION['email'])): ?>
+          <a href="logout">Logout</a>
+          <a href="profile">
+            Hello, <?php echo htmlspecialchars($_SESSION['username'] . " " . $_SESSION['surname']); ?>!
+          </a>
+        <?php else: ?>
+          <a href="login">
             Login
-          </li>
-        </a>
-        <a style="float:right" href="signup.php">
-          <li>
+          </a>
+          <a href="signup">
             Sign Up
-          </li>
-        </a>
-      <?php endif; ?>
-
-
-    </nav>
+          </a>
+        <?php endif; ?>
+      </nav>
+    </div>
   </header>

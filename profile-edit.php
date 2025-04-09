@@ -1,0 +1,40 @@
+<?php include 'includes/header.php' ?>
+
+<main class="edit-profile-container">
+    <h2>Edit Your Profile</h2>
+
+    <form action="update-profile.php" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="username">First Name</label>
+            <input type="text" id="username" name="username" value="<?= htmlspecialchars($_SESSION['username']) ?>"
+                required />
+        </div>
+        <div class="form-group">
+            <label for="surname">Last Name</label>
+            <input type="text" id="surname" name="surname" value="<?= htmlspecialchars($_SESSION['surname']) ?>"
+                required />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" value="<?= htmlspecialchars($_SESSION['email']) ?>" required />
+        </div>
+
+        <div class="form-group">
+            <label for="password">New Password <span class="form-note">(Leave blank to keep current)</span></label>
+            <input type="password" id="password" name="password" />
+        </div>
+
+        <div class="form-group">
+            <label for="picture">Profile Picture</label>
+            <input type="file" id="picture" name="picture" accept="image/*" />
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">Save Changes</button>
+            <a href="profile.html" class="btn-secondary">Cancel</a>
+        </div>
+    </form>
+</main>
+
+<?php include 'includes/footer.php' ?>
