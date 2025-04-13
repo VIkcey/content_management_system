@@ -1,6 +1,9 @@
-<?php include 'includes/header.php' ?>
-
 <?php
+declare(strict_types=1);
+http_response_code(404);
+require_once 'includes/database-connection.php';
+require_once 'includes/functions.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -16,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $user['forename'];
             $_SESSION['surname'] = $user['surname'];
             $_SESSION['created_at'] = $user['joined'];
+            $_SESSION['picture'] = $user['picture'];
             header("Location: index.php"); // Rediriger vers la page de tableau de bord
             exit();
         } else {
@@ -31,10 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+<?php include_once 'includes/header.php' ?>
 <!-- auth code -->
 <div class="container myContainerAuth">
     <div class="auth-container" id="login">
-        <h2>Welcome Back 🌍</h2>
+        <h2>Welcome Back</h2>
         <form action="" method="POST" class="auth-form">
             <input type="email" name="email" placeholder="Email" required />
             <input type="password" name="password" placeholder="Password" required />
@@ -44,4 +49,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </div>
 
-<?php include 'includes/footer.php' ?>
+<?php include_once 'includes/footer.php' ?>

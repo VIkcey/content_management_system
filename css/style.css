@@ -171,8 +171,6 @@ body {
 }
 
 
-
-
 /* profile html */
 
 
@@ -315,4 +313,15 @@ input[type="file"] {
   font-size: 0.9rem;
   color: #777;
   margin-top: -0.5rem;
+}
+
+.not-found-hero {
+  background-color: #f8f8f8;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.not-found-hero .hero-content h1 {
+  font-size: 3rem;
+  color: #333;
 }

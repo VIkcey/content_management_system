@@ -1,9 +1,18 @@
-<?php include 'includes/header.php' ?>
+<?php
+declare(strict_types=1);
+http_response_code(404);
+require_once 'includes/database-connection.php';
+require_once 'includes/functions.php';
+?>
 
+
+<?php include_once 'includes/header.php' ?>
 <!-- PROFILE SECTION -->
 <main class="profile-container">
     <div class="profile-header">
-        <img src="img/default-avatar.png" alt="User Avatar" class="profile-avatar" />
+        <?php if ($_SESSION['picture']) { ?>
+            <img src="<?= 'uploads/' . $_SESSION['picture'] ?>" class="profile-avatar" alt="User Avatar" width="200">
+        <?php } ?>
         <div class="profile-details">
             <h2><?= htmlspecialchars($_SESSION['username'] . ' ' . $_SESSION['surname']) ?></h2>
             <p>Email: <?= htmlspecialchars($_SESSION['email']) ?></p>
@@ -39,4 +48,4 @@
 </main>
 
 
-<?php include 'includes/footer.php' ?>
+<?php include_once 'includes/footer.php' ?>

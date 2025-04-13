@@ -1,7 +1,11 @@
-<?php include 'includes/header.php' ?>
+<?php
+declare(strict_types=1);
+http_response_code(404);
+require_once 'includes/database-connection.php';
+require_once 'includes/functions.php';
+?>
 
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $forename = $_POST['forename'];
     $surname = $_POST['surname'];
@@ -37,24 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-<!-- <div class="container" id="signup">
-    <h2>Sign Up</h2>
-    <form action="signup.php" method="POST">
-        <label for="forename">First Name :</label>
-        <input type="text" name="forename" required><br><br>
-        <label for="surname">Last Name :</label>
-        <input type="text" name="surname" required><br><br>
-        <label for="email">Email :</label>
-        <input type="email" name="email" required><br><br>
-        <label for="password">Password :</label>
-        <input type="password" name="password" required><br><br>
-        <button type="submit">Register</button>
-    </form>
-    <div class="switch">
-        <p>Already have an account? <a href="login.php">Login</a></p>
-    </div>
-</div> -->
 
+<?php include_once 'includes/header.php' ?>
 <div class="container myContainerAuth">
     <div class="auth-container">
         <h2>Create Your Account ✈️</h2>
@@ -69,4 +57,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </div>
 
-<?php include 'includes/footer.php' ?>
+<?php include_once 'includes/footer.php' ?>

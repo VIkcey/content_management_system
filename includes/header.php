@@ -1,10 +1,3 @@
-<?php
-declare(strict_types=1);
-require 'includes/database-connection.php';
-require 'includes/functions.php';
-session_start(); // Start the session
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 

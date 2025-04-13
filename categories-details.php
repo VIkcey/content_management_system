@@ -1,7 +1,46 @@
 <?php
-include 'includes/header.php'
-    ?>
+declare(strict_types=1);
+include_once 'includes/database-connection.php';
+include_once 'includes/functions.php';
+session_start(); // Start the session
 
+
+$id = $_GET['id'];
+if (!$id) {
+    include_once 'page-not-found.php';
+}
+
+// print_r($id);
+// exit;
+
+$sql = "SELECT
+      A.title,   A.summary,     A.content,
+      A.created, A.category_id, A.member_id, 
+      C.name AS category,
+      CONCAT( M.forename, ' ', M.surname ) AS author,
+      I.file AS image_file,
+      I.alt  AS image_alt 
+    FROM article     AS A
+    JOIN category    AS C  ON A.category_id = C.id
+    JOIN member      AS M  ON A.member_id   = M.id
+    LEFT JOIN image  AS I  ON A.image_id    = I.id
+    WHERE
+      A.id = :id AND
+      A.published = 1
+    ;"
+;
+
+$article = pdo($pdo, $sql, ['id' => $id])->fetch();
+
+if (!$article) {
+    include 'page-not-found.php';
+}
+
+// print_r($popular_cat);
+// exit;
+
+?>
+<?php include_once 'includes/header.php'; ?>
 <div class="container">
     <section class="hero">
         <div class="hero-content">
@@ -60,4 +99,4 @@ include 'includes/header.php'
     </section>
 </div>
 
-<?php include 'includes/footer.php' ?>
+<?php include_once 'includes/footer.php' ?>

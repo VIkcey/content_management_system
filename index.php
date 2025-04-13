@@ -1,14 +1,26 @@
 <?php
-include 'includes/header.php'
-    ?>
+declare(strict_types=1);
+http_response_code(404);
+require_once 'includes/database-connection.php';
+require_once 'includes/functions.php';
 
+$sql1 = "SELECT * FROM category WHERE navigation = 1 ORDER BY RAND() LIMIT 3;";
+$category = pdo($pdo, $sql1)->fetchAll();
+
+
+$sql2 = "SELECT * FROM category WHERE navigation = 1 AND is_featured = 1;";
+$featured_cat = pdo($pdo, $sql2)->fetchAll();
+
+?>
+
+<?php include_once 'includes/header.php'; ?>
 <div class="container">
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h2>Discover the World One Adventure at a Time</h2>
-            <p>Inspiration, tips, and stories from travelers around the globe 🌍</p>
-            <a href="/categories.html" class="btn-primary">Explore Destinations</a>
+            <p>Inspiration, tips, and stories from travelers around the globe</p>
+            <a href="categories.php" class="btn-primary">Explore Destinations</a>
         </div>
     </section>
 
@@ -16,27 +28,15 @@ include 'includes/header.php'
     <main class="">
         <h2 class="category-title">Latest Adventures</h2>
         <div class="post-grid nav-container">
-            <a href="article.html" class="post-card">
-                <img src="img/bali.jpg" alt="Bali" class="post-image">
-                <div class="post-info">
-                    <h3>Hidden Beaches of Bali</h3>
-                    <p>April 4, 2025</p>
-                </div>
-            </a>
-            <a href="article.html" class="post-card">
-                <img src="img/rome.jpg" alt="Rome" class="post-image">
-                <div class="post-info">
-                    <h3>A Weekend in Rome</h3>
-                    <p>March 29, 2025</p>
-                </div>
-            </a>
-            <a href="article.html" class="post-card">
-                <img src="img/peru.jpg" alt="Peru" class="post-image">
-                <div class="post-info">
-                    <h3>Hiking the Inca Trail</h3>
-                    <p>March 22, 2025</p>
-                </div>
-            </a>
+            <?php foreach ($category as $cat) { ?>
+                <a href="categories-details?id=<?= $cat['id'] ?>" class="post-card">
+                    <img src="<?= 'uploads/' . $cat['image'] ?>" alt="<?= $cat['name'] ?>" class="post-image">
+                    <div class="post-info">
+                        <h3><?= $cat['name'] ?></h3>
+                        <p>March 29, 2025</p>
+                    </div>
+                </a>
+            <?php } ?>
         </div>
     </main>
 
@@ -44,29 +44,17 @@ include 'includes/header.php'
     <section class="">
         <h2 class="category-title">Featured Categories</h2>
         <div class="post-grid nav-container">
-            <a href="/category-asia.html" class="post-card">
-                <img src="img/asia.jpg" alt="Asia" class="post-image">
-                <div class="post-info">
-                    <h3>Asia</h3>
-                    <p>Temples, street food & ancient wonders</p>
-                </div>
-            </a>
-            <a href="/category-europe.html" class="post-card">
-                <img src="img/europe.jpg" alt="Europe" class="post-image">
-                <div class="post-info">
-                    <h3>Europe</h3>
-                    <p>Historic cities & stunning architecture</p>
-                </div>
-            </a>
-            <a href="/category-americas.html" class="post-card">
-                <img src="img/americas.jpg" alt="Americas" class="post-image">
-                <div class="post-info">
-                    <h3>Americas</h3>
-                    <p>Mountains, deserts & coastlines</p>
-                </div>
-            </a>
+            <?php foreach ($featured_cat as $cat) { ?>
+                <a href="categories-details?id=<?= $cat['id'] ?>" class="post-card">
+                    <img src="<?= 'uploads/' . $cat['image'] ?>" alt="<?= $cat['name'] ?>" class="post-image">
+                    <div class="post-info">
+                        <h3><?= $cat['name'] ?></h3>
+                        <p><?= $cat['description'] ?></p>
+                    </div>
+                </a>
+            <?php } ?>
         </div>
     </section>
 </div>
 
-<?php include 'includes/footer.php' ?>
+<?php include_once 'includes/footer.php' ?>
