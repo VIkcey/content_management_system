@@ -12,6 +12,8 @@ if (session_status() === PHP_SESSION_NONE) {
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/auth.css">
+  <link rel="stylesheet" href="./css/about.css">
+  <link rel="stylesheet" href="./css/contact.css">
 
   <title>WanderLog | Explore, Dream, Discover</title>
 </head>
@@ -23,20 +25,20 @@ if (session_status() === PHP_SESSION_NONE) {
         <img src="img/logo.png" alt="WanderLog logo" height="90" width="auto">
       </a>
       <nav class="nav-links">
-        <a href="index">Home</a>
-        <a href="categories">Destinations</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.php">Home</a>
+        <a href="categories.php">Destinations</a>
+        <a href="about.php">About</a>
+        <a href="contactus.php">Contact</a>
         <?php if (isset($_SESSION['email'])): ?>
-          <a href="logout">Logout</a>
+          <a href="logout.php">Logout</a>
           <a href="profile">
             Hello, <?php echo htmlspecialchars($_SESSION['username'] . " " . $_SESSION['surname']); ?>!
           </a>
         <?php else: ?>
-          <a href="login">
+          <a href="login.php">
             Login
           </a>
-          <a href="signup">
+          <a href="signup.php">
             Sign Up
           </a>
         <?php endif; ?>
