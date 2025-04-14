@@ -84,5 +84,5 @@ if ($pictureFilename) {
 }
 
 $_SESSION['success'] = "Profile updated successfully.";
-header("Location: profile");
+header("Location: profile.php");
 exit();

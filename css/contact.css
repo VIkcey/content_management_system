@@ -1,0 +1,38 @@
+.contact-hero {
+    background: linear-gradient(to right, #cfbab5, #69594c);
+  }
+  
+  /* Reuse about-content and about-image */
+  
+  /* Contact Form Styles */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 15px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 111, 97, 0.3);
+  }
+  
+  /* Button is reused from .btn-primary */
+  
+  @media (max-width: 768px) {
+    .contact-form {
+      width: 100%;
+    }
+  }
+  
