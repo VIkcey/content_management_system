@@ -30,7 +30,7 @@ $featured_cat = pdo($pdo, $sql2)->fetchAll();
         <div class="post-grid nav-container">
             <?php foreach ($category as $cat) { ?>
                 <a href="categories-details?id=<?= $cat['id'] ?>" class="post-card">
-                    <img src="<?= 'uploads/' . $cat['image'] ?>" alt="<?= $cat['name'] ?>" class="post-image">
+                    <img src="<?= 'category/' . $cat['image'] ?>" alt="<?= $cat['name'] ?>" class="post-image">
                     <div class="post-info">
                         <h3><?= $cat['name'] ?></h3>
                         <p>March 29, 2025</p>
@@ -46,7 +46,7 @@ $featured_cat = pdo($pdo, $sql2)->fetchAll();
         <div class="post-grid nav-container">
             <?php foreach ($featured_cat as $cat) { ?>
                 <a href="categories-details?id=<?= $cat['id'] ?>" class="post-card">
-                    <img src="<?= 'uploads/' . $cat['image'] ?>" alt="<?= $cat['name'] ?>" class="post-image">
+                    <img src="<?= 'category/' . $cat['image'] ?>" alt="<?= $cat['name'] ?>" class="post-image">
                     <div class="post-info">
                         <h3><?= $cat['name'] ?></h3>
                         <p><?= $cat['description'] ?></p>

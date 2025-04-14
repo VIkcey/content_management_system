@@ -35,7 +35,6 @@ $article = pdo($pdo, $sql, ['id' => $id])->fetch();
 if (!$article) {
     include 'page-not-found.php';
 }
-
 // print_r($popular_cat);
 // exit;
 

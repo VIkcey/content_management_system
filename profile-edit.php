@@ -32,11 +32,6 @@ require_once 'includes/functions.php';
             <input type="password" id="password" name="password" />
         </div>
 
-        <?php
-        // print_r($_SESSION);
-// exit;
-        ?>
-
         <div class="form-group">
             <label for="picture">Profile Picture</label>
             <?php if ($_SESSION['picture']) { ?>
@@ -46,7 +41,7 @@ require_once 'includes/functions.php';
         </div>
         <div class="form-actions">
             <button type="submit" class="btn-primary">Save Changes</button>
-            <a href="profile.html" class="btn-secondary">Cancel</a>
+            <a href="profile.php" class="btn-secondary">Cancel</a>
         </div>
     </form>
 </main>

@@ -10,5 +10,13 @@ function pdo(PDO $pdo, string $sql, array $arguments = null)
   return $statement;                  // Return PDOStatement object
 }
 
+function getImageFilename($imageId)
+{
+  global $pdo;
+  $stmt = $pdo->prepare("SELECT file FROM image WHERE id = ?");
+  $stmt->execute([$imageId]);
+  $image = $stmt->fetch();
+  return $image ? $image['file'] : 'default.png';
+}
 
 ?>

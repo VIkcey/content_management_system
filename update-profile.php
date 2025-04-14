@@ -77,6 +77,7 @@ $stmt->execute($params);
 
 // Update session values
 $_SESSION['username'] = $username;
+$_SESSION['surname'] = $surname;
 $_SESSION['email'] = $email;
 if ($pictureFilename) {
     $_SESSION['picture'] = $pictureFilename;

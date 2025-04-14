@@ -18,6 +18,10 @@ require_once 'includes/functions.php';
             <p>Email: <?= htmlspecialchars($_SESSION['email']) ?></p>
             <p>Joined: <?= date('F Y', strtotime($_SESSION['created_at'])) ?></p>
         </div>
+        <div class="profile-details">
+            <a href="admin/manage-categories.php" class="btn-secondary">Manage Categories</a>
+            <a href="admin/manage-articles.php" class="btn-secondary">Manage Articles</a>
+        </div>
     </div>
 
     <!-- Saved Articles -->
