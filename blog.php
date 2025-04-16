@@ -140,53 +140,58 @@ $pageTitle = "Blog - My Project";
     </section>
 
     <!-- Blog Grid -->
-    <section class="blog-posts">
-        <div class="posts-grid">
-            <?php if (empty($articles)): ?>
-                <div class="no-posts">
-                    <p>No blog posts available at the moment. Check back soon!</p>
-                </div>
-            <?php else: ?>
-                <?php foreach ($articles as $article): ?>
-                    <article class="post-card">
-                        <?php if (!empty($article['image'])): ?>
-                            <div class="post-image">
-                                <!-- Debug the image path -->
-                                <?php
-                                    $imagePath = "img/{$article['image']}";
-                                    echo "<!-- Debug: Trying to load image from: $imagePath -->";
-                                    if (file_exists($imagePath)) {
-                                        echo "<!-- Debug: Image file exists -->";
-                                    } else {
-                                        echo "<!-- Debug: Image file does NOT exist -->";
-                                    }
-                                ?>
-                                <img src="img/<?= htmlspecialchars($article['image']) ?>" alt="<?= htmlspecialchars($article['title']) ?>">
-                            </div>
-                        <?php else: ?>
-                            <!-- Debug if image is empty -->
-                            <?php echo "<!-- Debug: No image found for article ID {$article['id']} -->"; ?>
-                        <?php endif; ?>
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span><?= htmlspecialchars($article['category_name']) ?> | <?= date('M d, Y', strtotime($article['created'])) ?></span>
-                            </div>
-                            <h3 class="post-title">
-                                <a href="articles-details.php?id=<?= $article['id'] ?>">
-                                    <?= htmlspecialchars($article['title']) ?>
-                                </a>
-                            </h3>
-                            <p class="post-excerpt"><?= htmlspecialchars(substr($article['summary'], 0, 150)) ?>...</p>
-                            <div class="post-footer">
-                                <span>By <?= htmlspecialchars($article['author_name']) ?></span>
-                                <a href="articles-details.php?id=<?= $article['id'] ?>" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </article>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </div>
-    </section>
+    <div class="post-grid nav-container">
+        <a href="javascript:void(0)" class="post-card">
+            <img src="category/67fc4fdd6940c-asia.jpg" alt="Asia" class="post-image">
+            <div class="post-info">
+                <h3>Asia</h3>
+                <p>Temples, street food &amp; ancient wonders</p>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="post-card">
+            <img src="category/67fc501d56b74-americas.jpg" alt="Americas" class="post-image">
+            <div class="post-info">
+                <h3>Americas</h3>
+                <p>Mountains, deserts &amp; coastlines</p>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="post-card">
+            <img src="category/67fc504a39635-australia.jpg" alt="Australia" class="post-image">
+            <div class="post-info">
+                <h3>Australia</h3>
+                <p>Outback adventures &amp; stunning reefs</p>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="post-card">
+            <img src="category/67fc505d19bec-antarctica.jpg" alt="Antarctica" class="post-image">
+            <div class="post-info">
+                <h3>Antarctica</h3>
+                <p>Icebergs, penguins &amp; untouched wilderness</p>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="post-card">
+            <img src="category/67fc50b8e9c68-middle-east.jpg" alt="Middle East" class="post-image">
+            <div class="post-info">
+                <h3>Middle East</h3>
+                <p>Desert landscapes &amp; rich heritage</p>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="post-card">
+            <img src="category/67fc50cfa003b-caribbean.jpg" alt="Caribbean" class="post-image">
+            <div class="post-info">
+                <h3>Caribbean</h3>
+                <p>Island vibes &amp; turquoise waters</p>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="post-card">
+            <img src="category/67fc516eda4b4-pacific.jpeg" alt="Pacific Islands" class="post-image">
+            <div class="post-info">
+                <h3>Pacific Islands</h3>
+                <p>Tropical paradises &amp; coral atolls</p>
+            </div>
+        </a>
+    </div>
+
 </div>
 
 <?php include_once 'includes/footer.php'; ?>

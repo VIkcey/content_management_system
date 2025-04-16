@@ -29,6 +29,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <a href="categories.php">Destinations</a>
         <a href="about.php">About</a>
         <a href="contactus.php">Contact</a>
+        <a href="blog.php">Blog</a>
         <?php if (isset($_SESSION['email'])): ?>
           <a href="logout.php">Logout</a>
           <a href="profile">
