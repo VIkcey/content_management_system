@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['surname'] = $user['surname'];
             $_SESSION['created_at'] = $user['joined'];
             $_SESSION['picture'] = $user['picture'];
+            $_SESSION['login_time'] = time();
             header("Location: index.php"); // Rediriger vers la page de tableau de bord
             exit();
         } else {
