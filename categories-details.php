@@ -33,6 +33,8 @@ if (!$article) {
     include 'page-not-found.php';
 }
 
+$sql2 = "SELECT * FROM category WHERE navigation = 1 AND id = $id;";
+$_cat = pdo($pdo, $sql2)->fetch();
 
 // print_r($article);
 // exit;
@@ -50,7 +52,7 @@ if (!$article) {
     </section>
 
     <section class="">
-        <h2 class="category-title">Articles in Asia</h2>
+        <h2 class="category-title">Articles in <?= $_cat['name'] ?></h2>
         <div class="post-grid nav-container">
             <?php foreach ($article as $art) { ?>
                 <a href="articles-details.php?id=<?= $art['article_id'] ?>" class="post-card">

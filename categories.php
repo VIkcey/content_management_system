@@ -11,7 +11,7 @@ $category = pdo($pdo, $sql1)->fetchAll();
 $sql2 = "SELECT * FROM category WHERE navigation = 1 AND is_popular = 1;";
 $popular_cat = pdo($pdo, $sql2)->fetchAll();
 
-// print_r($popular_cat);
+// print_r($popular_cat); 
 // exit;
 
 ?>
