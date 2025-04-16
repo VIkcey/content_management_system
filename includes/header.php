@@ -31,7 +31,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <a href="contactus.php">Contact</a>
         <?php if (isset($_SESSION['email'])): ?>
           <a href="logout.php">Logout</a>
-          <a href="profile">
+          <a href="profile.php">
             Hello, <?php echo htmlspecialchars($_SESSION['username'] . " " . $_SESSION['surname']); ?>!
           </a>
         <?php else: ?>
