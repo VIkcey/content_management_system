@@ -23,7 +23,7 @@ date_default_timezone_set('America/Toronto'); // 🕐 Montreal timezone
     <?php endif; ?>
 
     <div class="social-icons">
-      <a href="#"><img src="img/icons/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
       <a href="#"><img src="img/icons/instagram.png" alt="Instagram"></a>
       <a href="#"><img src="img/icons/twitter.png" alt="Twitter"></a>
     </div>
