@@ -30,7 +30,7 @@ $popular_cat = pdo($pdo, $sql2)->fetchAll();
         <h2 class="category-title">Continents</h2>
         <div class="post-grid nav-container">
             <?php foreach ($category as $cat) { ?>
-                <a href="categories-details?id=<?= $cat['id'] ?>" class="post-card">
+                <a href="categories-details.php?id=<?= $cat['id'] ?>" class="post-card">
                     <img src="<?= 'category/' . $cat['image'] ?>" alt="<?= $cat['name'] ?>" class="post-image">
                     <div class="post-info">
                         <h3><?= $cat['name'] ?></h3>
@@ -45,7 +45,7 @@ $popular_cat = pdo($pdo, $sql2)->fetchAll();
         <h2 class="category-title">Popular Destinations</h2>
         <div class="post-grid nav-container">
             <?php foreach ($popular_cat as $cat) { ?>
-                <a href="categories-details?id=<?= $cat['id'] ?>" class="post-card">
+                <a href="categories-details.php?id=<?= $cat['id'] ?>" class="post-card">
                     <img src="<?= 'category/' . $cat['image'] ?>" alt="<?= $cat['name'] ?>" class="post-image">
                     <div class="post-info">
                         <h3><?= $cat['name'] ?></h3>

@@ -46,8 +46,8 @@ require_once 'includes/functions.php';
 
     <!-- User Actions -->
     <div class="btn-group">
-        <a href="profile-edit" class="btn-secondary">Edit Profile</a>
-        <a href="logout" class="btn-danger">Log Out</a>
+        <a href="profile-edit.php" class="btn-secondary">Edit Profile</a>
+        <a href="logout.php" class="btn-danger">Log Out</a>
     </div>
 </main>
 
